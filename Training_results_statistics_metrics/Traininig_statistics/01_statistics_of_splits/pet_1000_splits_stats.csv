@@ -1,0 +1,9 @@
+,Content Source,Train - Size,Train - Positives,Train - Negatives,Dev - Size,Dev - Positives,Dev - Negatives,Test - Size,Test - Positives,Test - Negatives,Unlabeled - Size
+0,Title,2000,956,1044,1622,811,811,1621,230,1391,10976
+1,Abstract,2000,1000,1000,1696,848,848,1696,234,1462,11578
+2,Full text,2000,1002,998,2252,1126,1126,2252,274,1978,16028
+3,Translated Title,2000,975,1025,1634,817,817,1634,227,1407,11086
+4,Phrases with Keywords (Abstract),2000,987,1013,404,202,202,404,108,296,1240
+5,Phrases with Keywords + O.C (Abstract),2000,1026,974,1682,841,841,1682,227,1455,11466
+6,Phrases with Keywords (Full text),2000,963,1037,1434,717,717,1434,222,1212,9486
+7,Phrases with Keywords + O.C (Full text),2000,996,1004,2088,1044,1044,2087,253,1834,14704

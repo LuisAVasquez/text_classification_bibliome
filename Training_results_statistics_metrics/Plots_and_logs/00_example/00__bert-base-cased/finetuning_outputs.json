@@ -1,0 +1,55 @@
+{
+  "finetuning_results": {
+    "output_dir": "/mnt/beegfs/home/vasquez_reina/alvisnlp/lv_stage/scratch/20/03_results_at_optimal_epochs/PET_1000/parsed_trafilatura_fulltext/00__bert-base-cased",
+    "last_model_checkpoint_dir": "/mnt/beegfs/home/vasquez_reina/alvisnlp/lv_stage/scratch/20/03_results_at_optimal_epochs/PET_1000/parsed_trafilatura_fulltext/00__bert-base-cased/final/p0-i0"
+  },
+  "finetuning_args": {
+    "model_args": {
+      "pretrained_model_name_or_path": "bert-base-cased",
+      "id2label": {
+        "0": "irrelevant",
+        "1": "relevant"
+      },
+      "num_labels": 2,
+      "delete_checkpoints": true
+    },
+    "data_args": {
+      "dataframe_path": "/mnt/beegfs/home/vasquez_reina/alvisnlp/lv_stage/datasets/clean_pesv_preprocessed/split/pet_1000/parsed_trafilatura_fulltext",
+      "text_column_name": "parsed_trafilatura_fulltext",
+      "labels_column_name": "has_subject",
+      "shuffle": false,
+      "downsample": false
+    },
+    "tokenizer_args": {
+      "max_length": 300,
+      "padding": "max_length",
+      "truncation": true
+    },
+    "pet_args": {
+      "pet_repository": "/home/lavasquezrei/work/pet_repo/pet_for_pesv",
+      "method": "pet",
+      "model_type": "bert",
+      "task_name": "PESV",
+      "output_dir": "/mnt/beegfs/home/vasquez_reina/alvisnlp/lv_stage/scratch/20/03_results_at_optimal_epochs/PET_1000/parsed_trafilatura_fulltext/00__bert-base-cased",
+      "do_train": true,
+      "do_eval": true,
+      "overwrite_output_dir": true,
+      "pet_repetitions": 1,
+      "pet_num_train_epochs": 5,
+      "sc_num_train_epochs": 3,
+      "pattern_ids": [
+        0,
+        1,
+        2
+      ],
+      "learning_rate": 1e-05,
+      "metric_for_best_model": "f_beta_2.0",
+      "pet_per_gpu_train_batch_size": 32,
+      "pet_per_gpu_eval_batch_size": 32,
+      "pet_per_gpu_unlabeled_batch_size": 32,
+      "sc_per_gpu_train_batch_size": 32,
+      "sc_per_gpu_eval_batch_size": 32,
+      "sc_per_gpu_unlabeled_batch_size": 32
+    }
+  }
+}

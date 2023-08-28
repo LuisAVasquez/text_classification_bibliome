@@ -1,0 +1,48 @@
+{
+  "model_args": {
+    "pretrained_model_name_or_path": "bert-base-multilingual-cased",
+    "id2label": {
+      "0": "irrelevant",
+      "1": "relevant"
+    },
+    "num_labels": 2,
+    "delete_checkpoints": false
+  },
+  "data_args": {
+    "dataframe_path": "PATH",
+    "text_column_name": "parsed_trafilatura_title",
+    "labels_column_name": "has_subject",
+    "shuffle": false,
+    "downsample": false
+  },
+  "tokenizer_args": {
+    "max_length": 300,
+    "padding": "max_length",
+    "truncation": true
+  },
+  "pet_args": {
+    "method": "pet",
+    "model_type": "bert",
+    "task_name": "PESV",
+    "output_dir": "Trafilatura_Title_PET_1000_multilingual_bert",
+    "do_train": true,
+    "do_eval": true,
+    "overwrite_output_dir": true,
+    "pet_repetitions": 1,
+    "pet_num_train_epochs": 5,
+    "sc_num_train_epochs": 1,
+    "pattern_ids": [
+      0,
+      1,
+      2
+    ],
+    "learning_rate": 1e-05,
+    "metric_for_best_model": "f_beta_2.0",
+    "pet_per_gpu_train_batch_size": 32,
+    "pet_per_gpu_eval_batch_size": 32,
+    "pet_per_gpu_unlabeled_batch_size": 32,
+    "sc_per_gpu_train_batch_size": 32,
+    "sc_per_gpu_eval_batch_size": 32,
+    "sc_per_gpu_unlabeled_batch_size": 32
+  }
+}

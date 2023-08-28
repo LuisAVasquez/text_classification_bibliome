@@ -1,0 +1,44 @@
+{
+  "model_args": {
+    "pretrained_model_name_or_path": "xlm-roberta-base",
+    "freeze_base_weights": false,
+    "id2label": {
+      "0": "irrelevant",
+      "1": "relevant"
+    },
+    "num_labels": 2,
+    "delete_checkpoints": false
+  },
+  "data_args": {
+    "dataframe_path": "PATH",
+    "text_column_name": "parsed_trafilatura_fulltext",
+    "labels_column_name": "has_subject",
+    "shuffle": true,
+    "downsample": false
+  },
+  "tokenizer_args": {
+    "max_length": 300,
+    "padding": "max_length",
+    "truncation": true
+  },
+  "preprocessing_args": {
+    "train_size": 0.8,
+    "dev_size": 0.1,
+    "test_size": 0.1
+  },
+  "finetuning_args": {
+    "output_dir": "Trafilatura_Fulltext_Balanced_Finetuning_xlmroberta",
+    "num_train_epochs": 1,
+    "overwrite_output_dir": true,
+    "evaluation_strategy": "epoch",
+    "save_strategy": "epoch",
+    "per_device_train_batch_size": 32,
+    "per_device_eval_batch_size": 32,
+    "load_best_model_at_end": true,
+    "logging_strategy": "epoch",
+    "save_total_limit": 2,
+    "disable_tqdm": false,
+    "optim": "adamw_torch",
+    "metric_for_best_model": "f_beta_2.0"
+  }
+}

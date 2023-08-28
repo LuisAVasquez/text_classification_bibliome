@@ -1,0 +1,7 @@
+model,Title,Abstract,Full text,Translated Title,Phrases with Keywords (Abstract),Phrases with Keywords + O.C (Abstract),Phrases with Keywords (Full text),Phrases with Keywords + O.C (Full text)
+Bert base,2,2,2,2,2,2,2,2
+Bert multilingual,4,2,4,4,2,2,4,10
+BioLinkBert,7,10,2,3,4,6,10,4
+SciBert,2,2,2,2,2,2,2,9
+Roberta base,8,7,7,4,4,9,3,4
+XLM Roberta,5,10,6,8,4,9,9,6
